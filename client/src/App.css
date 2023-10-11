@@ -1,0 +1,155 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Cambio de colores para el modo oscuro */
+.dark body {
+  background-color: black;
+  color: white;
+}
+
+.grid {
+  padding: 0 20px;
+}
+
+.grid > div {
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #f28500;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.dark header {
+  background-color: #333;
+  color: black;
+}
+
+ul {
+  list-style: true;
+}
+
+li {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+.dark li {
+  background-color: #333;
+  color: white;
+}
+
+li img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+button {
+  background-color: #f28500;
+  color: rgb(199, 218, 28);
+  border: none; /* corregido de "true" a "none" */
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+button:hover {
+  background-color: #d97400;
+}
+
+li:hover {
+  background-color: #f9f9f9;
+}
+
+.dark li:hover {
+  background-color: #555;
+}
+
+li:active {
+  background-color: #eee;
+}
+
+.card {
+  position: relative;
+  height: 400px;
+  min-width: 250px;
+  margin: 10px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: .5s;
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dark .card-back {
+  background-color: #333;
+  color: white;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Añadiendo estilos específicos para texto en el modo oscuro */
+.text-center {
+  color: black;
+}
+
+.dark .text-center {
+  color: white;
+}
+
+
